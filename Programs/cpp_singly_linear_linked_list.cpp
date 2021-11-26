@@ -51,13 +51,20 @@ class SinglyLL
             newn -> data = iNo;
             newn -> next = NULL;
 
-            while (current -> next != NULL)
+            if (first == NULL)
             {
-                current = current -> next;
+                first = newn;
+            }
+            else
+            {
+                while (current -> next != NULL)
+                {
+                    current = current -> next;
+                }
+                
+                current -> next = newn;
             }
             
-            current -> next = newn;
-
             size++;
 
             cout<<"Success - New node inserted"<<endl;
